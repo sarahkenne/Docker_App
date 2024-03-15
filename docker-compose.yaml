@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mysql:
+    build: ./Database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: users
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  php_apache:
+    build: ./Frontend
+    environment:
+      DB_HOST: mysql
+      DB_NAME: users
+      DB_USER: root
+      DB_PASSWORD: root
+    ports:
+      - "8000:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
