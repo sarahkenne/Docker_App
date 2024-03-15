@@ -6,22 +6,23 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: users
+      MYSQL_PASSWORD: root
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
 
   php_apache:
-    build: ./Frontend
-    environment:
-      DB_HOST: mysql
-      DB_NAME: users
-      DB_USER: root
-      DB_PASSWORD: root
-    ports:
-      - "8000:80"
     depends_on:
       - mysql
+    build: ./Frontend
+    environment:
+    - DB_HOST=mysql:3306
+    - DB_NAME=users
+    - DB_USER=root
+    - DB_PASSWORD=root
+    ports:
+      - "8000:80"
 
 volumes:
   mysql_data:

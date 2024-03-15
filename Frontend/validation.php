@@ -10,10 +10,7 @@ $username = getenv('DB_USER');
 $password = getenv('DB_PASSWORD');
 
 $bd = new PDO(
-  "mysql:host=$host;dbname=$dbname;charset=utf8",
-  $username,
-  $password
-);
+  "mysql:host=$host; dbname=$dbname",$username, $password);
 $requete = 'INSERT INTO users (nom,prenom,email,sujet) VALUES (:nom, :prenom, :email, :sujet)';
 $prepare = $bd->prepare($requete);
 $prepare->execute([
