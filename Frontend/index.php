@@ -8,13 +8,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
     <title>Formulaire html</title>
+    <style>
+      
+      .form-container {
+          background-color: #84EFF3  ; 
+          border: 1px solid #dc3545; 
+          border-radius: 10px; 
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre */
+          padding: 20px; 
+          margin-top: 20px; 
+      }
+
+  </style>
 </head>
 <body id="body">
     <div class="contact">
         <div class="container">
             <div class="form-container">
                 <h2 class="text-center">WELCOME</h2>
-                <p>Connect with us</p>
+                <h3>Veuillez Remplir le Formulaire</h3>
                 <form id="form" action="validation.php" method="post">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <label for="username">NOM:</label>
