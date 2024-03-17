@@ -1,17 +1,3 @@
-<?php
-$host = getenv('DB_HOST');
-$dbname = getenv('DB_NAME');
-$username = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
-
-// Connexion à la base de données
-$bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
-// Requête SQL pour récupérer toutes les entrées de la table users
-$requete = $bdd->query('SELECT * FROM users');
-$users = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,24 +49,7 @@ $users = $requete->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
-    <h1>Informations Utilisateurs</h1>
 
-<table border="1">
-    <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Email</th>
-        <th>Sujet</th>
-    </tr>
-    <?php foreach ($users as $user): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($user['nom']); ?></td>
-            <td><?php echo htmlspecialchars($user['prenom']); ?></td>
-            <td><?php echo htmlspecialchars($user['email']); ?></td>
-            <td><?php echo htmlspecialchars($user['sujet']); ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table>
 </body>
 
 </html>

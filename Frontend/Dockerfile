@@ -11,3 +11,4 @@ RUN git clone https://github.com/sarahkenne/Docker_App.git
 WORKDIR /var/www/html
 COPY index.php validation.php ./
 EXPOSE 80
+    

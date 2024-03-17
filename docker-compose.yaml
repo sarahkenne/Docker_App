@@ -12,7 +12,7 @@ services:
     ports:
       - "3306:3306"
 
-  php_apache:
+  lol:
     depends_on:
       - mysql
     build: ./Frontend
